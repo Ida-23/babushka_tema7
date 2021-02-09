@@ -13,13 +13,31 @@
       height: auto;
   }
 
-  section {
-      max-width: 1000px;
-      margin: 40px auto;
+
+
+  header {
+      padding: 20px 50px;
+      background-color: brown;
 
   }
 
 
+  /*sitets grid og side bredde*/
+
+  section {
+      max-width: 1000px;
+      margin: 40px auto;
+  }
+
+  #liste {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+  }
+
+
+
+  /* overskrifter og de forskellige fonte og fontstørrelse*/
   h1:nth-child(1) {
       margin: 0;
       font-size: 4rem;
@@ -56,11 +74,8 @@
   }
 
 
-
-  #liste {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      grid-gap: 20px;
+  nav {
+      background-color: #022131;
   }
 
 
@@ -68,12 +83,91 @@
 
 
 
+  /*menu fane og dens design på mobiludgaven*/
+  .hidden {
+      opacity: 0;
+      z-index: -10;
+
+  }
+
+  #menuknap_wrapper {
+      display: flex;
+      justify-content: space-between;
+
+  }
+
+
+  #menuknap {
+      display: inline-block;
+  }
+
+  #menu {
+      list-style-type: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      background-color: #022131;
+      width: 100%;
+      transform: translateY(2);
+  }
+
+  #menu li {
+      text-align: center;
+
+
+  }
+
+
+  .hoppe {
+      animation-name: hoppe_kf;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: both;
+      animation-direction: alternate;
+  }
+
+  @keyframes hoppe_kf {
+      0% {
+          transform: translateX(-60vw);
+      }
+
+      100% {
+          transform: translateX(0vw);
+      }
+  }
+
+
+
+  /* ------- burgermenu icon hvordan den går over i x -----------*/
+  .bar1,
+  .bar2,
+  .bar3 {
+      width: 34px;
+      height: 5px;
+      background-color: #f5faff;
+      margin: 6px 20px;
+      transition: 0.4s;
+  }
+
+  .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .change .bar2 {
+      opacity: 0;
+  }
+
+  .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+  }
 
 
 
 
-
-
+  /* stylingen af articlen*/
 
   .menu {
       padding: 20px;
@@ -81,25 +175,6 @@
 
   }
 
-  nav {
-      display: flex;
-
-      flex-direction: row;
-      justify-content: center;
-      background-color: #022131;
-
-
-  }
-
-
-
-
-
-  header {
-      padding: 20px 50px;
-      background-color: brown;
-
-  }
 
   button {
       margin: 10px 10px;
@@ -118,4 +193,46 @@
   .valgt {
       background-color: orangered;
       border: none;
+  }
+
+
+
+
+
+  @media only screen and (min-width: 600px) {
+
+      /*      ------------brugermanu og nav------------*/
+      nav {
+          display: flex;
+
+          flex-direction: row;
+          justify-content: center;
+
+
+
+      }
+
+      #menuknap {
+          display: none;
+      }
+
+      #menu.hidden {
+          opacity: 1;
+      }
+
+      #menu li {
+          display: inline-block;
+          margin-bottom: 0;
+
+      }
+
+
+
+      #menu {
+          text-align: center;
+          background-color: rgba(195, 195, 195, 0);
+          margin-top: 0;
+
+          position: relative;
+      }
   }

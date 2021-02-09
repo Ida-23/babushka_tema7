@@ -23,16 +23,22 @@
     </header>
 
 
-
     <nav>
-
-        <button data-rettype="alle" class="valgt">Alle</button>
-        <button data-rettype="forretter">Forretter</button>
-        <button data-rettype="hovedretter">Hovederetter</button>
-        <button data-rettype="desserter">Desserter</button>
-        <button data-rettype="sideorders">Sideretter</button>
-        <button data-rettype="drikkevarer">Drikkevarer</button>
-
+        <div id="menuknap_wrapper">
+            <div id="menuknap">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+        <ul id="menu" class="hidden" class="hoppe">
+            <li> <button data-rettype="alle" class="valgt">Alle</button></li>
+            <li><button data-rettype="forretter">Forretter</button></li>
+            <li><button data-rettype="hovedretter">Hovederetter</button></li>
+            <li><button data-rettype="desserter">Desserter</button></li>
+            <li><button data-rettype="sideorders">Sideretter</button></li>
+            <li><button data-rettype="drikkevarer">Drikkevarer</button></li>
+        </ul>
     </nav>
 
 
@@ -80,13 +86,26 @@
         function start() {
             const filterKnapper = document.querySelectorAll("nav button");
 
-
+            document.querySelector("#menuknap").addEventListener("click", toggleMenu);
 
             filterKnapper.forEach(knap => knap.addEventListener("click", filterRettype));
 
             hentData();
         }
 
+        function toggleMenu() {
+            console.log("toggleMenu");
+            document.querySelector("#menu").classList.toggle("hidden");
+            document.querySelector("#menu").classList.toggle("hoppe");
+            myFunction(this);
+
+            // this henvender sig til menuknappen. Så når man killer på menuknappen, kalder den både togglemenu og myFuncking. Har skrvet nyfincken (this) her for at den så også går med og kalder funktionen nedenunder
+        }
+
+        function myFunction(x) {
+
+            x.classList.toggle("change");
+        }
 
 
         function filterRettype() {
@@ -166,5 +185,8 @@
         function visDetalje(hvilken) {
             location.href = `detalje.html?id=${hvilken._id}`;
         }
+
     </script>
-</body></html>
+</body>
+
+</html>
