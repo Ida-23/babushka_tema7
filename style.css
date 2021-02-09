@@ -1,0 +1,121 @@
+  html {
+      font-size: 18px;
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+      background-color: beige;
+  }
+
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  section {
+      max-width: 1000px;
+      margin: 40px auto;
+
+  }
+
+
+  h1:nth-child(1) {
+      margin: 0;
+      font-size: 4rem;
+      font-family: 'Abril Fatface', cursive;
+      border: solid 1px;
+  }
+
+  h1:nth-child(2) {
+      margin: 0;
+      font-size: 2rem;
+      font-family: 'Abril Fatface', cursive;
+  }
+
+  h2 {
+      margin: 0px;
+      font-size: 1.5rem;
+      font-family: 'Abril Fatface', cursive;
+  }
+
+  h3 {
+      margin: 10px 0px;
+      font-size: 1rem;
+      font-family: 'Abril Fatface', cursive;
+  }
+
+  h4 {
+      margin: 0;
+      font-size: 0.9rem;
+      font-family: 'Abril Fatface', cursive;
+  }
+
+  p {
+      font-family: 'Assistant', sans-serif;
+  }
+
+
+
+  #liste {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu {
+      padding: 20px;
+      border: 1px solid;
+
+  }
+
+  nav {
+      display: flex;
+
+      flex-direction: row;
+      justify-content: center;
+      background-color: #022131;
+
+
+  }
+
+
+
+
+
+  header {
+      padding: 20px 50px;
+      background-color: brown;
+
+  }
+
+  button {
+      margin: 10px 10px;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1rem;
+      background-color: #022131;
+      color: aliceblue;
+      text-align: center;
+      border: none;
+      padding: 10px;
+      margin: 0px;
+
+  }
+
+
+  .valgt {
+      background-color: orangered;
+      border: none;
+  }

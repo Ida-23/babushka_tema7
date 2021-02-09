@@ -5,66 +5,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babushka</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant&display=swap" rel="stylesheet">
 </head>
-
-
-<style>
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    main {
-        max-width: 1200px;
-        margin: 0 auto;
-
-    }
-
-    #liste {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        grid-gap: 1em;
-        margin: 2em;
-    }
-
-    .menu {
-        padding: 1em;
-        border: 1px solid;
-        border-radius: 1em;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    button {
-        margin: 0 10px;
-    }
-
-
-    .valgt {
-        background-color: orangered;
-    }
-</style>
 
 
 <body>
 
     <header>
+        <h1>Babushka</h1>
+
         <h1>Alle</h1>
     </header>
 
+
+
     <nav>
+
         <button data-rettype="alle" class="valgt">Alle</button>
         <button data-rettype="forretter">Forretter</button>
         <button data-rettype="hovedretter">Hovederetter</button>
         <button data-rettype="desserter">Desserter</button>
         <button data-rettype="sideorders">Sideretter</button>
         <button data-rettype="drikkevarer">Drikkevarer</button>
+
     </nav>
+
 
 
     <main>
@@ -75,11 +45,10 @@
                 <h2 class="katagori"></h2>
                 <h3 class="navn"></h3>
                 <img src="" alt="" class="menu_billede">
-                <p class="kort_beskrivelse"></p>
+                <p class="kort_beskrivelse">Beskrivelse: </p>
                 <p class="lang_beskrivelse"></p>
                 <h4 class="region"></h4>
-                <h4 class="pris">pris</h4>
-
+                <h4 class="pris">Pris: </h4>
             </article>
         </template>
 
@@ -88,10 +57,12 @@
     <script>
         let retter;
 
+
+
         let filter = "alle";
 
 
-        const header = document.querySelector("header h1");
+        const header = document.querySelector("header h1:nth-child(2)");
 
         const url = "https://babushka-dd8a.restdb.io/rest/menu";
 
@@ -108,6 +79,8 @@
 
         function start() {
             const filterKnapper = document.querySelectorAll("nav button");
+
+
 
             filterKnapper.forEach(knap => knap.addEventListener("click", filterRettype));
 
@@ -165,7 +138,7 @@
 
                     const klon = template.cloneNode(true);
 
-                    klon.querySelector(".katagori").textContent = ret.kategori;
+
                     klon.querySelector(".navn").textContent = ret.navn;
                     klon.querySelector(".menu_billede").src = medieurl + ret.billede;
 
@@ -173,16 +146,25 @@
 
                     klon.querySelector(".menu_billede").title = ret.navn;
 
-                    klon.querySelector(".kort_beskrivelse").textContent = ret.kortbeskrivelse;
-                    klon.querySelector(".lang_beskrivelse").textContent = ret.langbeskrivelse;
-                    klon.querySelector(".region").textContent = ret.oprindelsesregion;
-                    klon.querySelector(".pris").textContent = ret.pris;
+                    klon.querySelector(".kort_beskrivelse").textContent += `${ret.kortbeskrivelse}`;
+
+
+                    klon.querySelector(".pris").textContent += ret.pris;
+
+
+                    klon.querySelector(".menu").addEventListener("click", () => visDetalje(ret));
+
+
                     dest.appendChild(klon);
                 }
 
-
             })
 
+        }
+
+
+        function visDetalje(hvilken) {
+            location.href = `detalje.html?id=${hvilken._id}`;
         }
     </script>
 </body></html>
