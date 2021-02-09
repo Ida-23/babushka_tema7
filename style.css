@@ -26,7 +26,7 @@
 
   section {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 40px 20px;
   }
 
   #liste {
@@ -61,16 +61,19 @@
       margin: 10px 0px;
       font-size: 1rem;
       font-family: 'Abril Fatface', cursive;
+      text-align: center;
   }
 
   h4 {
       margin: 0;
       font-size: 0.9rem;
       font-family: 'Abril Fatface', cursive;
+      padding-left: 10px;
   }
 
   p {
       font-family: 'Assistant', sans-serif;
+      padding-left: 10px;
   }
 
 
@@ -114,6 +117,7 @@
 
   #menu li {
       text-align: center;
+
 
 
   }
@@ -170,7 +174,6 @@
   /* stylingen af articlen*/
 
   .menu {
-      padding: 20px;
       border: 1px solid;
 
   }
@@ -207,9 +210,6 @@
 
           flex-direction: row;
           justify-content: center;
-
-
-
       }
 
       #menuknap {
@@ -218,6 +218,7 @@
 
       #menu.hidden {
           opacity: 1;
+          z-index: 10;
       }
 
       #menu li {
@@ -227,7 +228,6 @@
       }
 
 
-
       #menu {
           text-align: center;
           background-color: rgba(195, 195, 195, 0);
@@ -235,4 +235,9 @@
 
           position: relative;
       }
+
+      section {
+          margin: 40px auto;
+      }
+
   }
