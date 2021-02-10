@@ -1,0 +1,140 @@
+  html {
+      font-size: 15px;
+  }
+
+  body {
+      margin: 0;
+      padding: 0;
+      background-color: #022131;
+  }
+
+  img {
+      width: 100%;
+      height: auto;
+  }
+
+
+
+
+
+  .tekst {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      margin-top: 20px;
+  }
+
+  .tegnestift {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      width: 4.2vw;
+      height: 4vw;
+  }
+
+  /*sitets grid og side bredde*/
+
+  article {
+      max-width: 1000px;
+      margin: 20px 20px;
+
+
+  }
+
+
+
+
+  /* overskrifter og de forskellige fonte og fontstørrelse*/
+
+  h2 {
+      margin: 10px 0px;
+      font-size: 1.5rem;
+      text-align: center;
+      font-family: 'Abril Fatface', cursive;
+      padding-top: 20px;
+
+  }
+
+  h3 {
+      margin: 0;
+      padding-left: 10px;
+      padding-top: 20px;
+      font-size: 1rem;
+      font-family: 'Abril Fatface', cursive;
+
+  }
+
+
+
+  p {
+      font-family: 'Assistant', sans-serif;
+      padding-left: 10px;
+  }
+
+
+
+
+
+
+
+
+
+  /* stylingen af articlen*/
+
+  button {
+      position: absolute;
+      top: 90%;
+      right: 36%;
+      border: none;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
+      background-color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-family: 'Abril Fatface', cursive;
+      font-size: 0.9rem;
+      padding: 10px 40px;
+  }
+
+  button:hover {
+      background-color: #8d0019;
+      color: #ffffff;
+  }
+
+
+  @media only screen and (min-width: 600px) {
+      /*sitets grid og side bredde*/
+
+      button {
+          top: 80%;
+          right: 20%;
+
+
+      }
+
+      article {
+          margin-top: 200px;
+          margin: 200px auto;
+          margin-bottom: 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 20px;
+      }
+
+      .tekst {
+
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-top: 0;
+
+      }
+
+
+  }

@@ -5,19 +5,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="">
+
+    <link rel="stylesheet" href="detalje.css">
 </head>
 
 <body>
 
 
     <article class="menu">
-        <h2 class="katagori"></h2>
-        <h3 class="navn"></h3>
-        <img src="" alt="" class="menu_billede">
-        <p class="lang_beskrivelse">Beskrivelse:</p>
-        <h4 class="region"></h4>
-        <h4 class="pris">Pris: </h4>
+        <div> <img src="" alt="" class="menu_billede"></div>
+        <div class="tekst">
+            <img class="tegnestift" src="svg/tegnestift.svg" alt="tegnestift">
+            <h2 class="navn"></h2>
+            <p class="lang_beskrivelse">Beskrivelse:</p>
+            <h3 class="region">Nationalitet: </h3>
+            <h3 class="pris">Pris: </h3>
+        </div>
+
     </article>
 
     <button>Tilbage</button>
@@ -62,8 +66,11 @@
             document.querySelector(".navn").textContent = ret.navn;
             document.querySelector(".menu_billede").src = medieurl + ret.billede[0];
 
-            document.querySelector(".region").textContent = ret.oprindelsesregion;
+            document.querySelector(".region").textContent += ret.oprindelsesregion;
             document.querySelector(".lang_beskrivelse").textContent = ret.langbeskrivelse;
+
+
+            document.querySelector(".pris").textContent += `${ret.pris} ${",-"}`;
 
             document.querySelector("button").addEventListener("click", tilbageTilMenu);
 

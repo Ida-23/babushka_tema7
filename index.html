@@ -17,33 +17,32 @@
 <body>
 
     <header>
-        <h1>Babushka</h1>
-
-        <h1>Alle</h1>
+        <nav>
+            <div id="menuknap_wrapper">
+                <div id="menuknap">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <ul id="menu" class="hidden" class="hoppe">
+                <li> <button data-rettype="alle" class="valgt">Alle</button></li>
+                <li><button data-rettype="forretter">Forretter</button></li>
+                <li><button data-rettype="hovedretter">Hovederetter</button></li>
+                <li><button data-rettype="desserter">Desserter</button></li>
+                <li><button data-rettype="sideorders">Sideretter</button></li>
+                <li><button data-rettype="drikkevarer">Drikkevarer</button></li>
+            </ul>
+        </nav>
     </header>
 
-
-    <nav>
-        <div id="menuknap_wrapper">
-            <div id="menuknap">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-        </div>
-        <ul id="menu" class="hidden" class="hoppe">
-            <li> <button data-rettype="alle" class="valgt">Alle</button></li>
-            <li><button data-rettype="forretter">Forretter</button></li>
-            <li><button data-rettype="hovedretter">Hovederetter</button></li>
-            <li><button data-rettype="desserter">Desserter</button></li>
-            <li><button data-rettype="sideorders">Sideretter</button></li>
-            <li><button data-rettype="drikkevarer">Drikkevarer</button></li>
-        </ul>
-    </nav>
-
-
-
     <main>
+        <section id="splach"></section>
+        <section id="overskrift">
+            <h1>Alle</h1>
+        </section>
+
+
         <section id="liste"></section>
 
         <template>
@@ -51,7 +50,7 @@
                 <h2 class="katagori"></h2>
                 <img src="" alt="" class="menu_billede">
                 <h3 class="navn"></h3>
-                <p class="kort_beskrivelse">Beskrivelse: </p>
+                <p class="kort_beskrivelse"></p>
                 <p class="lang_beskrivelse"></p>
                 <h4 class="region"></h4>
                 <h4 class="pris">Pris: </h4>
@@ -68,7 +67,7 @@
         let filter = "alle";
 
 
-        const header = document.querySelector("header h1:nth-child(2)");
+        const header = document.querySelector("section h1");
 
         const url = "https://babushka-dd8a.restdb.io/rest/menu";
 
@@ -165,10 +164,10 @@
 
                     klon.querySelector(".menu_billede").title = ret.navn;
 
-                    klon.querySelector(".kort_beskrivelse").textContent += `${ret.kortbeskrivelse}`;
+                    klon.querySelector(".kort_beskrivelse").textContent = `${ret.kortbeskrivelse}`;
 
 
-                    klon.querySelector(".pris").textContent += ret.pris;
+                    klon.querySelector(".pris").textContent += `${ret.pris} ${",-"}`;
 
 
                     klon.querySelector(".menu").addEventListener("click", () => visDetalje(ret));

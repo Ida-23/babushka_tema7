@@ -5,21 +5,32 @@
   body {
       margin: 0;
       padding: 0;
-      background-color: beige;
+      background-color: #022131;
   }
+
+
+
 
   img {
-      max-width: 100%;
-      height: auto;
+      width: 100%;
+      height: 30vh;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
   }
 
 
 
-  header {
-      padding: 20px 50px;
-      background-color: brown;
 
+  #splach {
+      background-image: url(splach_mobil.png);
+      max-width: none;
+      width: 100%;
+      height: 80vh;
+      background-size: cover;
+      margin: 0;
+      background-position: 50% 0%;
   }
+
 
 
   /*sitets grid og side bredde*/
@@ -29,6 +40,7 @@
       margin: 40px 20px;
   }
 
+
   #liste {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -37,18 +49,17 @@
 
 
 
-  /* overskrifter og de forskellige fonte og fontstørrelse*/
-  h1:nth-child(1) {
-      margin: 0;
-      font-size: 4rem;
-      font-family: 'Abril Fatface', cursive;
-      border: solid 1px;
-  }
 
-  h1:nth-child(2) {
+
+  /* overskrifter og de forskellige fonte og fontstørrelse*/
+
+
+  h1 {
       margin: 0;
+      padding-top: 40px;
       font-size: 2rem;
       font-family: 'Abril Fatface', cursive;
+      color: aliceblue;
   }
 
   h2 {
@@ -66,6 +77,7 @@
 
   h4 {
       margin: 0;
+      padding-bottom: 20px;
       font-size: 0.9rem;
       font-family: 'Abril Fatface', cursive;
       padding-left: 10px;
@@ -79,6 +91,9 @@
 
   nav {
       background-color: #022131;
+      padding: 20px 0px;
+      height: 40px;
+
   }
 
 
@@ -174,42 +189,70 @@
   /* stylingen af articlen*/
 
   .menu {
-      border: 1px solid;
-
+      border: 2px solid #8d0019;
+      background-color: #ffffff;
+      border-radius: 10px;
   }
 
 
+
   button {
-      margin: 10px 10px;
-      font-family: 'Assistant', sans-serif;
-      font-size: 1rem;
+      border: none;
+      color: white;
+
+      text-decoration: none;
+      display: inline-block;
+      transition-duration: 0.4s;
+      cursor: pointer;
+
       background-color: #022131;
       color: aliceblue;
-      text-align: center;
       border: none;
+      font-family: 'Assistant', sans-serif;
+      font-size: 1rem;
+      text-align: center;
       padding: 10px;
       margin: 0px;
 
   }
 
+  button:hover {
+      background-color: #8d0019;
+      color: white;
+      width: 100%;
 
-  .valgt {
-      background-color: orangered;
-      border: none;
   }
 
+  .valgt {
+      background-color: #8d0019;
+      border: none;
+      width: 100%;
 
+  }
 
 
 
   @media only screen and (min-width: 600px) {
 
+
+      #splach {
+          background-image: url(splach.png);
+          max-width: none;
+          width: auto;
+          height: 100vh;
+          background-size: cover;
+          margin: 0;
+          border-bottom: 20px solid #8d0019;
+      }
+
       /*      ------------brugermanu og nav------------*/
       nav {
           display: flex;
-
           flex-direction: row;
           justify-content: center;
+          padding: 0px 0px;
+          height: auto;
+
       }
 
       #menuknap {
@@ -229,10 +272,10 @@
 
 
       #menu {
-          text-align: center;
+          text-align: end;
+          padding-right: 60px;
           background-color: rgba(195, 195, 195, 0);
           margin-top: 0;
-
           position: relative;
       }
 
