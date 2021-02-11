@@ -87,6 +87,35 @@
   }
 
 
+  #menukort_overskrift h1 {
+      text-align: center;
+      border-bottom: 2px solid #8d0019;
+  }
+
+
+  /*åbningstider*/
+
+  #tider {
+      margin-top: 100px;
+      width: 700px;
+  }
+
+  .tider_h2 {
+      text-align: center;
+      padding: 20vh 0vh;
+      text-transform: uppercase;
+      color: #ffffff;
+  }
+
+
+  .tider_h3 {
+      background-color: #ffffff;
+      border-radius: 100%;
+      padding: 15vh 0vh;
+
+
+  }
+
   nav {
       background-color: #022131;
       padding: 20px 0px;
@@ -153,7 +182,7 @@
   }
 
 
-  #global button {
+  a {
       border: none;
       color: white;
       text-decoration: none;
@@ -168,17 +197,14 @@
       text-align: center;
       padding: 10px;
       margin: 0px;
-
   }
 
 
 
-  #global button:hover {
-      background-color: #8d0019;
-      color: white;
-      width: 100%;
-
+  a:hover {
+      color: #8d0019;
   }
+
 
   /* ------- burgermenu icon hvordan den går over i x -----------*/
   .bar1,
@@ -222,6 +248,10 @@
   }
 
 
+
+
+  /*menukort nav og filtrerings muligheder*/
+
   #lokal button {
       color: white;
       text-decoration: none;
@@ -233,23 +263,20 @@
       font-family: 'Assistant', sans-serif;
       font-size: 1rem;
       text-align: center;
-      padding: 20px;
-      margin: 0px;
-      width: 30%;
-
+      padding: 10px 10px;
   }
 
   #lokal button:hover {
       background-color: #8d0019;
       color: white;
-      /*      width: 100%;*/
-
   }
+
 
   .valgt {
       background-color: #8d0019;
       border: none;
   }
+
 
   #lokal {
       display: grid;
@@ -260,6 +287,11 @@
       margin-bottom: 100px;
       margin-top: 50px;
   }
+
+
+
+
+
 
 
   @media only screen and (min-width: 600px) {
@@ -277,10 +309,12 @@
       /*      ------------brugermanu og nav global------------*/
       #global {
           display: flex;
+          position: fixed;
           flex-direction: row;
           justify-content: center;
           padding: 0px 0px;
-          height: auto;
+          height: 80px;
+          width: 100vw;
       }
 
 
@@ -288,12 +322,15 @@
           display: flex;
           flex-direction: row;
           justify-content: center;
+          grid-gap: 5px;
+          margin-top: 0px;
       }
 
 
 
       #lokal button {
           width: none;
+          margin: 0vw 12px;
       }
 
       #menuknap {
@@ -308,7 +345,6 @@
       #oversigt li {
           display: inline-block;
           margin-bottom: 0;
-
       }
 
 
@@ -316,12 +352,23 @@
           text-align: end;
           padding-right: 60px;
           background-color: rgba(195, 195, 195, 0);
-          margin-top: 0;
+          margin-top: 15px;
           position: relative;
       }
 
       section {
           margin: 40px auto;
       }
+
+
+
+      /*åbningstider*/
+
+      #tider {
+          display: grid;
+          grid-template-columns: 1fr 1.5fr;
+
+      }
+
 
   }
