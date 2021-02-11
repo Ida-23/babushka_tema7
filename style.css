@@ -97,7 +97,6 @@
 
   #tider {
       margin-top: 100px;
-      width: 700px;
   }
 
   .tider_h2 {
@@ -111,7 +110,7 @@
   .tider_h3 {
       background-color: #ffffff;
       border-radius: 100%;
-      padding: 15vh 0vh;
+      padding: 20vh 0vh;
 
 
   }
@@ -367,8 +366,15 @@
       #tider {
           display: grid;
           grid-template-columns: 1fr 1.5fr;
+          width: 700px;
 
       }
+
+      .tider_h3 {
+          padding: 15vh 0vh;
+
+      }
+
 
 
   }
